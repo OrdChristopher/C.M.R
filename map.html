@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokemon Map Editor</title>
+		
+		<style type="text/css">
+			#map {
+				margin: 0 auto;
+				border: 1px solid;
+				width: 512px;
+				height: 384px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="map">
+			<canvas id="map_canvas" width="512px" height="384px"></canvas>
+			<script type="text/javascript" language="javascript">
+				drawCheckeredBackground(document.getElementById("map_canvas"), 24, 32);
+				
+				function drawCheckeredBackground(can, nRow, nCol) {
+					var ctx = can.getContext("2d");
+					var w = can.width;
+					var h = can.height;
+
+					nRow = nRow || 8;    // default number of rows
+					nCol = nCol || 8;    // default number of columns
+
+					w /= nCol;            // width of a block
+					h /= nRow;            // height of a block
+
+					for (var i = 0; i < nRow; ++i) {
+						for (var j = 0, col = nCol / 2; j < col; ++j) {
+							ctx.rect(2 * j * w + (i % 2 ? 0 : w), i * h, w, h);
+						}
+					}
+					ctx.fillStyle = "#cccccc";
+					ctx.fill();
+				}
+			</script>
+		</div>
+	</body>
+</html>

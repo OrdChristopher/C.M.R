@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Fixed top navbar example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+		.navbar {
+			font-weight: 700;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+			-webkit-transition: padding-top .3s,padding-bottom .3s;
+			-moz-transition: padding-top .3s,padding-bottom .3s;
+			transition: padding-top .3s,padding-bottom .3s;
+		}
+
+		.navbar-brand {
+			color: #fff!important;
+			font-size: 2em;
+			-webkit-transition: font-size .3s;
+			-moz-transition: font-size .3s;
+			transition: font-size .3s;
+		}
+		
+		.navbar-nav {
+		  letter-spacing: 0.0625rem;
+		}
+		
+		.nav-link {
+			color: #fff!important;
+		}
+		
+		header.masthead {
+		  padding-top: calc(6rem + 72px);
+		  padding-bottom: 6rem;
+		}
+
+		header.masthead h1 {
+		  font-size: 3rem;
+		  line-height: 3rem;
+		}
+
+		header.masthead h2 {
+		  font-size: 1.3rem;
+		  font-family: 'Lato';
+		}
+
+		@media (min-width: 992px) {
+		  header.masthead {
+			padding-top: calc(6rem + 106px);
+			padding-bottom: 6rem;
+		  }
+		  header.masthead h1 {
+			font-size: 4.75em;
+			line-height: 4rem;
+		  }
+		  header.masthead h2 {
+			font-size: 1.75em;
+		  }
+		}
+		
+		hr.star-light,
+		hr.star-dark {
+		  max-width: 15rem;
+		  padding: 0;
+		  text-align: center;
+		  border: none;
+		  border-top: solid 0.25rem;
+		  margin-top: 2.5rem;
+		  margin-bottom: 2.5rem;
+		}
+
+		hr.star-light:after,
+		hr.star-dark:after {
+		  position: relative;
+		  top: -.8em;
+		  display: inline-block;
+		  padding: 0 0.25em;
+		  content: '\f005';
+		  font-family: FontAwesome;
+		  font-size: 2em;
+		}
+
+		hr.star-light {
+		  border-color: #fff;
+		}
+
+		hr.star-light:after {
+		  color: #fff;
+		  background-color: #18BC9C;
+		}
+
+		hr.star-dark {
+		  border-color: #2C3E50;
+		}
+
+		hr.star-dark:after {
+		  color: #2C3E50;
+		  background-color: white;
+		}
+	</style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top text-uppercase">
+	  <div class="container">
+		  <a class="navbar-brand" href="#">Fernando Arce</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+	  </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <h1 class="text-uppercase mb-0">Fernando Arce</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Artist - Graphic Artist - Digital Design - Silk Screen Printing</h2>
+      </div>
+    </header>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

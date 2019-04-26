@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<style type="text/css">
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #edeff2;
+  font-family: "Calibri", "Roboto", sans-serif;
+}
+
+.chat_window {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+@font-face {
+    font-family: ManaS;
+    src: url(manaspc.ttf);
+}
+
+.messages {
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  max-height: 260px;
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  font-family: ManaS;
+}
+.messages .message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+.messages .message.left .avatar {
+  background-color: #f5886e;
+  float: left;
+}
+.messages .message.left .text_wrapper {
+  background-color: #ffe6cb;
+  margin-left: 20px;
+}
+.messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
+  right: 100%;
+  border-right-color: #ffe6cb;
+}
+.messages .message.left .text {
+  color: #c48843;
+}
+.messages .message.right .avatar {
+  background-color: #fdbf68;
+  float: right;
+}
+.messages .message.right .text_wrapper {
+  background-color: #c7eafc;
+  margin-right: 20px;
+  float: right;
+}
+.messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {
+  left: 100%;
+  border-left-color: #c7eafc;
+}
+.messages .message.right .text {
+  color: #45829b;
+}
+.messages .message.appeared {
+  opacity: 1;
+}
+.messages .message .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.messages .message .text_wrapper {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  width: calc(100% - 85px);
+  min-width: 100px;
+  position: relative;
+}
+.messages .message .text_wrapper::after, .messages .message .text_wrapper:before {
+  top: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.messages .message .text_wrapper::after {
+  border-width: 13px;
+  margin-top: 0px;
+}
+.messages .message .text_wrapper::before {
+  border-width: 15px;
+  margin-top: -2px;
+}
+.messages .message .text_wrapper .text {
+  font-size: 12px;
+}
+
+.bottom_wrapper {
+  font-family: ManaS;
+  position: relative;
+  width: 100%;
+  padding: 20px 20px;
+}
+.bottom_wrapper .message_input_wrapper {
+  display: inline-block;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #fff;
+  border: 1px solid #bcbdc0;
+  width: calc(100% - 160px);
+  font-size: 12px;
+  font-weight: normal;
+  position: relative;
+  padding: 0 20px;
+}
+.bottom_wrapper .message_input_wrapper .message_input {
+  border: none;
+  height: 100%;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  position: absolute;
+  outline-width: 0;
+  color: gray;
+}
+.bottom_wrapper .send_message {
+  width: 140px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #a3d063;
+  border: 2px solid #a3d063;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  text-align: center;
+  float: right;
+}
+.bottom_wrapper .send_message:hover {
+  color: #a3d063;
+  background-color: #fff;
+}
+.bottom_wrapper .send_message .text {
+  font-size: 12px;
+  display: inline-block;
+  line-height: 48px;
+}
+
+.message_template {
+  display: none;
+}
+	</style>
+	
+    <title>Hello, world!</title>
+  </head>
+  <body>
+	<div class="container">
+		<div class="nav-scroller py-1 mb-2">
+			<nav class="nav d-flex justify-content-between">
+				<a class="p-2 text-muted" href="#">World</a>
+				<a class="p-2 text-muted" href="#">U.S.</a>
+				<a class="p-2 text-muted" href="#">Technology</a>
+				<a class="p-2 text-muted" href="#">Design</a>
+				<a class="p-2 text-muted" href="#">Culture</a>
+				<a class="p-2 text-muted" href="#">Business</a>
+				<a class="p-2 text-muted" href="#">Politics</a>
+				<a class="p-2 text-muted" href="#">Opinion</a>
+				<a class="p-2 text-muted" href="#">Science</a>
+				<a class="p-2 text-muted" href="#">Health</a>
+				<a class="p-2 text-muted" href="#">Style</a>
+				<a class="p-2 text-muted" href="#">Travel</a>
+			</nav>
+		</div>
+		
+		<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+			<div class="chat_window">
+				<ul class="messages">
+					<li class="message left appeared">
+						<div class="avatar"></div>
+						<div class="text_wrapper">
+							<div class="text">Hello Philip! :)</div>
+						</div>
+					</li>
+					<li class="message right appeared">
+						<div class="avatar"></div>
+						<div class="text_wrapper">
+							<div class="text">Hi Sandy! How are you?</div>
+						</div>
+					</li>
+					<li class="message left appeared">
+						<div class="avatar"></div>
+						<div class="text_wrapper">
+							<div class="text">I'm fine, thank you!</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="bottom_wrapper clearfix">
+				<div class="message_input_wrapper">
+					<input class="message_input" placeholder="Type your message here...">
+				</div>
+				<div class="send_message">
+					<div class="icon"></div>
+					<div class="text">Send</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
