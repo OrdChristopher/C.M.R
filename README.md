@@ -1,2 +1,3 @@
 # C.M.R
 CHRISTOPHER-MICHAEL-DON-ROGERS A COMPANY OF AUTHORITY
+sandisc cruze blade 8GB says, 'T*Y*!^HANK-OU.'
