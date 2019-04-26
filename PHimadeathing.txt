@@ -1,0 +1,17 @@
+// PornHubs' JavaScript data is stored at dynamic variable 'flashvars_X', where X is a unique integer video id. (Not related to; GET ?viewkey=Y)
+if ( ( player = document.getElementById( 'player' ) ) != undefined ) {
+var embedId = player.getAttribute( 'data-video-id' );
+var flashvars = this['flashvars_' + embedId];
+var defaultQuality = flashvars.defaultQuality;
+var mp4s = [ ];
+for ( var index=0; index < defaultQuality.length; index++ ) {
+if ( ( mp4 = flashvars[ 'quality_' + defaultQuality[ index ] + 'p' ] ) != undefined ) {
+mp4s.push ( mp4 );
+}
+}
+console.log( mp4s );
+}
+else
+{
+alert( "DIV#player not found" );
+}
