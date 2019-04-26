@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Christopher Rogers">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Location at Decurar</title>
+
+    <!-- CSS -->
+    <link href="assets/css/fullscreen.css" rel="stylesheet">
+    <link href="assets/css/location.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/btn-3d.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="blackout"></div>
+
+    <div class="texture"></div>
+
+    <div class="landscape">
+
+      <div class="btn-group" role="group">
+
+        <button type="button" class="btn btn-xs btn-3d btn-default" onclick="cityscape()">building</button>
+        <button type="button" class="btn btn-xs btn-3d btn-default" disabled>landscape</button>
+        <button type="button" class="btn btn-xs btn-3d btn-default" onclick="mountains()">mountain</button>
+
+      </div>
+
+    </div>
+
+    <div class="fullscreen">
+
+      <div class="btn-group" role="group">
+
+        <button type="button" class="btn btn-xs btn-3d btn-default" onclick="enterFullscreen()">enter</button>
+        <button type="button" class="btn btn-xs btn-3d btn-default" disabled>fullscreen</button>
+        <button type="button" class="btn btn-xs btn-3d btn-default" onclick="exitFullscreen()">exit</button>
+
+      </div>
+
+    </div>
+
+    <div class="location">
+
+      <form method="get" action="location.html" class="btn-group" role="group">
+
+        <button id="find" type="button" class="btn btn-3d btn-default" onclick="findLocation()">find</button>
+        <input id="latitude" name="latitude" type="number" placeholder="latitude" class="btn btn-3d btn-default" />
+        <input id="longitude" name="longitude" type="number" placeholder="longitude" class="btn btn-3d btn-default" />
+        <button id="location" type="submit" class="btn btn-3d btn-default" disabled>location</button>
+        <input id="zip" name="zip" type="number" min="00501" max="99950" placeholder="zip" class="btn btn-3d btn-default" onkeydown="onKeyDown()" />
+        <button id="manual" type="button" class="btn btn-3d btn-default" onclick="manualLocation()">manual</button>
+
+      </form>
+
+      <div class="links">
+        <a href="#map" class="map-link"  onclick="googleMap()">Google Map</a>
+        <a href="https://tools.usps.com/go/ZipLookupAction!input.action" target="_blank" class="zip-link">Zip Code&#8482;</a>
+      </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mapModal">
+              <a href="https://developers.google.com/maps/documentation/embed/" target="_blank">Google Maps Embed API</a>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe id="embed_map" class="w-100 h-100" src="" allowfullscreen></iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.js"><\/script>')</script>
+    <script src="https://rawgithub.com/soulwire/sketch.js/master/js/sketch.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/fullscreen.js"></script>
+    <script src="assets/js/location.js"></script>
+  </body>
+</html>

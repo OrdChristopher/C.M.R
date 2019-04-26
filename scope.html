@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 10px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <canvas id="aries"></canvas>
+        </td>
+        <td>
+          <canvas id="taurus"></canvas>
+        </td>
+        <td>
+          <canvas id="gemini"></canvas>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <canvas id="cancer"></canvas>
+        </td>
+        <td>
+          <canvas id="leo"></canvas>
+        </td>
+        <td>
+          <canvas id="virgo"></canvas>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <canvas id="libra"></canvas>
+        </td>
+        <td>
+          <canvas id="scorpio"></canvas>
+        </td>
+        <td>
+          <canvas id="sagittarius"></canvas>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <canvas id="capricorn"></canvas>
+        </td>
+        <td>
+          <canvas id="aquarius"></canvas>
+        </td>
+        <td>
+          <canvas id="pisces"></canvas>
+        </td>
+      </tr>
+    </table>
+    <script>
+      drawPisces(64, 64, 4);
+      drawAquarius(64, 64, 4);
+      drawCapricorn(64, 64, 4);
+      drawSagittarius(64, 64, 4);
+      drawScorpio(64, 64, 4);
+      drawLibra(64, 64, 4);
+      drawVirgo(64, 64, 4);
+      drawLeo(64, 64, 4);
+      drawCancer(64, 64, 4);
+      drawGemini(64, 64, 4);
+      drawTaurus(64, 64, 4);
+      drawAries(64, 64, 4);
+      function drawPisces (width, height, lineWidth) {
+        var canvas = document.getElementById('pisces');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top segment
+        context.moveTo(lineWidth, centerHeight - lineWidth);
+        context.lineTo(lineWidth, lineWidth);
+        context.lineTo(centerWidth, lineWidth);
+        //center line
+        context.lineTo(centerWidth, height - lineWidth);
+        context.moveTo(centerWidth, lineWidth);
+        context.lineTo(width - lineWidth, lineWidth);
+        context.lineTo(width - lineWidth, centerHeight - lineWidth);
+        //Bottom segment
+        context.moveTo(lineWidth, centerHeight + lineWidth);
+        context.lineTo(lineWidth, height - lineWidth);
+        context.lineTo(centerWidth, height - lineWidth);
+        context.moveTo(centerWidth, height - lineWidth);
+        context.lineTo(width - lineWidth, height - lineWidth);
+        context.lineTo(width - lineWidth, centerHeight + lineWidth);
+        //center left to right
+        context.moveTo(centerWidth, centerHeight);
+        context.lineTo(centerWidth * 0.75, centerHeight);
+        context.lineTo(centerWidth * 1.25, centerHeight);
+        context.stroke();
+      }
+
+      function drawAquarius (width, height, lineWidth) {
+        var canvas = document.getElementById('aquarius');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top segment
+        context.moveTo(lineWidth, centerHeight - lineWidth);
+        context.lineTo(lineWidth, lineWidth);
+        context.lineTo(centerWidth - lineWidth, lineWidth);
+        context.lineTo(centerWidth - lineWidth, centerHeight - lineWidth);
+        context.moveTo(centerWidth, lineWidth);
+        context.lineTo(width - lineWidth * 4, lineWidth);
+        context.lineTo(width - lineWidth * 4, centerHeight - lineWidth);
+        //Bottom segment
+        context.moveTo(lineWidth * 4, centerHeight + lineWidth);
+        context.lineTo(lineWidth * 4, height - lineWidth);
+        context.lineTo(centerWidth + lineWidth * 2, height - lineWidth);
+        context.lineTo(centerWidth + lineWidth * 2, centerHeight + lineWidth);
+        context.moveTo(centerWidth + lineWidth, height - lineWidth);
+        context.lineTo(width - lineWidth, height - lineWidth);
+        context.lineTo(width - lineWidth, centerHeight + lineWidth);
+        context.stroke();
+      }
+
+      function drawCapricorn (width, height, lineWidth) {
+        var canvas = document.getElementById('capricorn');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Stem up
+        context.moveTo(lineWidth, lineWidth);
+        context.lineTo(centerWidth * 0.5, height - lineWidth);
+        context.lineTo(centerWidth - lineWidth, lineWidth);
+        context.lineTo(width - lineWidth, centerHeight - lineWidth);
+        context.lineTo(width - lineWidth, height - lineWidth);
+        context.lineTo(centerWidth - lineWidth, height - lineWidth);
+        context.stroke();
+      }
+
+      function drawSagittarius (width, height, lineWidth) {
+        var canvas = document.getElementById('sagittarius');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Stem up
+        context.moveTo(centerWidth, lineWidth);
+        context.lineTo(centerWidth - lineWidth * 3, lineWidth);
+        context.lineTo(centerWidth - lineWidth * 3, lineWidth * 3);
+        context.moveTo(centerWidth, lineWidth);
+        context.lineTo(centerWidth + lineWidth * 3, lineWidth);
+        context.lineTo(centerWidth + lineWidth * 3, lineWidth * 3);
+        context.moveTo(centerWidth, lineWidth * 3);
+        context.lineTo(centerWidth, height - lineWidth);
+        context.moveTo(centerWidth, centerHeight * 1.25);
+        context.lineTo(centerWidth * 0.5, centerHeight * 1.25);
+        context.lineTo(centerWidth * 1.5, centerHeight * 1.25);
+        context.stroke();
+      }
+
+      function drawScorpio (width, height, lineWidth) {
+        var canvas = document.getElementById('scorpio');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top central left to right
+        context.moveTo(0, lineWidth);
+        context.lineTo(width - ( centerWidth / 2) - lineWidth, lineWidth);
+        //Right to center
+        context.lineTo(width - ( centerWidth / 2) - lineWidth, height - lineWidth);
+        context.lineTo(width - lineWidth, centerHeight * 1.5);
+
+        //Second width top to bottom
+        context.moveTo(centerWidth * 0.5 - lineWidth * 3, 0);
+        context.lineTo(centerWidth * 0.5 - lineWidth * 3, height);
+        //Third width top to bottom
+        context.moveTo(centerWidth - lineWidth * 3, 0);
+        context.lineTo(centerWidth - lineWidth * 3, height);
+        context.stroke();
+      }
+
+      function drawLibra (width, height, lineWidth) {
+        var canvas = document.getElementById('libra');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top central left to right
+        context.moveTo(centerWidth - ( centerWidth / 4 ), lineWidth);
+        context.lineTo(centerWidth + ( centerWidth / 4 ), lineWidth);
+        //Second width top to bottom
+        context.moveTo(centerWidth - ( centerWidth / 4 ), 0);
+        context.lineTo(centerWidth - ( centerWidth / 4 ), centerHeight - lineWidth);
+        context.lineTo(0 + lineWidth, centerHeight - lineWidth);
+        //Third width top to bottom
+        context.moveTo(centerWidth + ( centerWidth / 4 ), 0);
+        context.lineTo(centerWidth + ( centerWidth / 4 ), centerHeight - lineWidth);
+        context.lineTo(width - lineWidth, centerHeight - lineWidth);
+        //Bottom left to right
+        context.moveTo(0 + lineWidth, centerHeight * 1.25 + lineWidth * 4);
+        context.lineTo(width - lineWidth, centerHeight * 1.25 + lineWidth * 4);
+        context.stroke();
+      }
+
+      function drawVirgo (width, height, lineWidth) {
+        var canvas = document.getElementById('virgo');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top central left to right
+        context.moveTo(0, lineWidth);
+        context.lineTo(centerWidth + ( centerWidth / 2 ), lineWidth);
+        //Right square
+        context.lineTo(centerWidth + ( centerWidth / 2 ), centerHeight);
+        context.lineTo(width - lineWidth, centerHeight);
+        context.lineTo(width - lineWidth, centerHeight + ( centerHeight / 2 ));
+        //angle right to left
+        context.lineTo(centerWidth + lineWidth, height - lineWidth);
+        context.moveTo(centerWidth + ( centerWidth / 2 ), centerHeight);
+        context.lineTo(centerWidth + lineWidth, centerHeight);
+        context.lineTo(centerWidth + lineWidth, centerHeight + ( centerHeight / 2 ));
+        //angle left to right
+        context.lineTo(width - lineWidth, height - lineWidth);
+        //Second width top to bottom
+        context.moveTo(centerWidth - ( centerWidth / 2 ) - lineWidth * 3, 0);
+        context.lineTo(centerWidth - ( centerWidth / 2 ) - lineWidth * 3, height);
+        //Third width top to bottom
+        context.moveTo(centerWidth - lineWidth * 3, 0);
+        context.lineTo(centerWidth - lineWidth * 3, height);
+        context.stroke();
+      }
+
+      function drawLeo (width, height, lineWidth) {
+        var canvas = document.getElementById('leo');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top central left to right
+        context.moveTo(centerWidth - ( centerWidth / 4 ), lineWidth);
+        context.lineTo(centerWidth + ( centerWidth / 4 ), lineWidth);
+        //Second width top to bottom
+        context.moveTo(centerWidth - ( centerWidth / 4 ), 0);
+        context.lineTo(centerWidth - ( centerWidth / 4 ), height - lineWidth);
+        context.lineTo(0 + lineWidth, centerHeight * 1.5);
+        //Third width top to bottom
+        context.moveTo(centerWidth + ( centerWidth / 4 ), 0);
+        context.lineTo(centerWidth + ( centerWidth / 4 ), height - lineWidth);
+        context.lineTo(canvas.width - lineWidth, centerHeight * 1.5);
+        context.stroke();
+      }
+
+      function drawCancer (width, height, lineWidth) {
+        var canvas = document.getElementById('cancer');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top left to right
+        context.moveTo(0, lineWidth);
+        context.lineTo(width - lineWidth, lineWidth);
+        //Top right square
+        context.lineTo(width - lineWidth, centerHeight);
+        context.lineTo(centerWidth + lineWidth * 3, centerHeight);
+        context.lineTo(centerWidth + lineWidth * 3, lineWidth);
+        //Bottom right to left
+        context.moveTo(width, height - lineWidth);
+        context.lineTo(lineWidth, height - lineWidth);
+        //Bottom left square
+        context.lineTo(lineWidth, centerHeight);
+        context.lineTo(centerWidth - lineWidth * 3, centerHeight);
+        context.lineTo(centerWidth - lineWidth * 3, height - lineWidth);
+        context.stroke();
+      }
+
+      function drawGemini (width, height, lineWidth) {
+        var canvas = document.getElementById('gemini');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = Math.floor(lineWidth / 2);
+        var centerHeight = Math.floor(canvas.height / 2 );
+        var centerWidth = Math.floor(canvas.width / 2);
+
+        context.beginPath();
+        //Top left to right
+        context.moveTo(0, lineWidth);
+        context.lineTo(width - lineWidth, lineWidth);
+        //Bottom left to right
+        context.moveTo(0, height - lineWidth);
+        context.lineTo(width - lineWidth, height - lineWidth);
+        //Second width top to bottom
+        context.moveTo(centerWidth - ( centerWidth / 2 ), lineWidth);
+        context.lineTo(centerWidth - ( centerWidth / 2 ), height - lineWidth);
+        //Third width top to bottom
+        context.moveTo(centerWidth + ( centerWidth / 2 ), lineWidth);
+        context.lineTo(centerWidth + ( centerWidth / 2 ), height - lineWidth);
+        context.stroke();
+      }
+
+      function drawTaurus (width, height, lineWidth) {
+        var canvas = document.getElementById('taurus');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var lineWidth = lineWidth / 2;
+        var centerHeight = canvas.height / 2;
+        var centerWidth = canvas.width / 2;
+
+        context.beginPath();
+        //Top left to center
+        context.moveTo(lineWidth, lineWidth);
+        context.lineTo(centerWidth, centerHeight);
+        //Central square.
+        context.lineTo(width - lineWidth, centerHeight);
+        context.lineTo(width - lineWidth, height - lineWidth);
+        context.lineTo(lineWidth, height - lineWidth);
+        context.lineTo(lineWidth, centerHeight);
+        context.lineTo(centerWidth, centerHeight);
+        //Center to top right
+        context.lineTo(width - lineWidth, lineWidth);
+        context.stroke();
+      }
+
+      function drawAries (width, height, lineWidth) {
+        var canvas = document.getElementById('aries');
+        var context = canvas.getContext('2d');
+        context.canvas.width = width;
+        context.canvas.height = height;
+        context.clearRect( 0, 0, context.canvas.width, context.canvas.height);
+        context.lineWidth = lineWidth;
+        var end = canvas.height;
+        var long = Math.floor(end / 2);
+        var short = Math.floor(long / 2);
+        var lineWidth = Math.floor(lineWidth / 2);
+
+        context.beginPath();
+        //Top line.
+        context.moveTo(0, lineWidth);
+        context.lineTo(end, lineWidth);
+        //Central line.
+        context.moveTo(long, 0);
+        context.lineTo(long, end);
+        //Left horn down.
+        context.moveTo(lineWidth, 0);
+        context.lineTo(lineWidth, long);
+        //Left horn right.
+        context.lineTo(short, long);
+        //Right horn down.
+        context.moveTo(end - lineWidth, 0);
+        context.lineTo(end - lineWidth, long);
+        //Roght horn left.
+        context.lineTo(end - short, long);
+        context.stroke();
+      }
+    </script>
+  </body>
+</html>
